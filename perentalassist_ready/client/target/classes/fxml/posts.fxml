@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.PostsController" prefWidth="1200" prefHeight="800">
+
+  <top>
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="navbar">
+      <Button text="← Home" onAction="#goBack" styleClass="nav-btn"/>
+      <Label text="Posts & Comments" styleClass="section-title"/>
+    </HBox>
+  </top>
+
+  <center>
+    <SplitPane dividerPositions="0.58">
+      <items>
+        <VBox spacing="10" padding="12">
+          <Label text="Create a post"/>
+          <TextArea fx:id="newPostArea" promptText="What's on your mind?" prefRowCount="3"/>
+          <Button text="Post" onAction="#onCreatePost" styleClass="primary-btn"/>
+          <Separator/>
+          <TableView fx:id="postTable" prefHeight="600">
+            <columns>
+              <TableColumn fx:id="colAuthor" text="Author" prefWidth="160"/>
+              <TableColumn fx:id="colContent" text="Content" prefWidth="520"/>
+              <TableColumn fx:id="colTime" text="Time" prefWidth="160"/>
+            </columns>
+          </TableView>
+        </VBox>
+
+        <VBox spacing="10" padding="12">
+          <Label text="Comments"/>
+          <ListView fx:id="commentList" prefHeight="600"/>
+          <HBox spacing="8">
+            <TextField fx:id="newCommentField" promptText="Write a comment..." HBox.hgrow="ALWAYS"/>
+            <Button text="Send" onAction="#onCreateComment" styleClass="primary-btn"/>
+          </HBox>
+        </VBox>
+      </items>
+    </SplitPane>
+  </center>
+</BorderPane>

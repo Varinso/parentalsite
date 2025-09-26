@@ -1,0 +1,9 @@
+com\pa\client\ClientApp.class
+com\pa\client\controllers\PreParentController.class
+com\pa\client\controllers\PostsController.class
+com\pa\client\controllers\SignupController.class
+com\pa\client\controllers\LoginController.class
+com\pa\client\controllers\PostRow.class
+com\pa\client\controllers\PreParentController$VideoItem.class
+com\pa\client\service\ApiService.class
+com\pa\client\controllers\HomeController.class

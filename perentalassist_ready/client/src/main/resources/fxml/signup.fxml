@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.SignupController" prefWidth="520" prefHeight="700"
+            styleClass="auth-root">
+
+  <top>
+    <VBox spacing="8" alignment="CENTER">
+      <Label text="Create your account" styleClass="brand-title"/>
+      <Label text="It only takes a minute" styleClass="muted"/>
+    </VBox>
+  </top>
+
+  <center>
+    <VBox spacing="12" alignment="CENTER" maxWidth="360">
+      <TextField fx:id="nameField" promptText="Display name" maxWidth="360"/>
+      <TextField fx:id="emailField" promptText="Email" maxWidth="360"/>
+      <PasswordField fx:id="passwordField" promptText="Password" maxWidth="360"/>
+      <PasswordField fx:id="confirmField" promptText="Confirm password" maxWidth="360"/>
+      <Button text="Create account" onAction="#onSignup" maxWidth="360" styleClass="primary-btn"/>
+      <Hyperlink text="Back to sign in" onAction="#goLogin"/>
+    </VBox>
+  </center>
+
+  <bottom>
+    <Label text="By creating an account you agree to our terms." BorderPane.alignment="CENTER" styleClass="footer-muted"/>
+  </bottom>
+</BorderPane>

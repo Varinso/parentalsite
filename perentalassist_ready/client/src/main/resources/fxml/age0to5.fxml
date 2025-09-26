@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.SimpleGalleryController"
+            prefWidth="1200" prefHeight="800">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="navbar">
+            <Button text="← Back" onAction="#goBack" styleClass="nav-btn"/>
+            <Label text="Age 0–5" styleClass="section-title"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <content>
+                <VBox spacing="16" alignment="TOP_LEFT" padding="12">
+                    <Label text="Videos (add URLs in controller)" styleClass="muted"/>
+                    <FlowPane fx:id="videoGrid" hgap="16" vgap="16" prefWrapLength="1100"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

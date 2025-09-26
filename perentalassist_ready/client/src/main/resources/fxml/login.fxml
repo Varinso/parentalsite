@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.LoginController" prefWidth="440" prefHeight="560"
+            styleClass="auth-root">
+
+  <top>
+    <VBox spacing="8" alignment="CENTER" BorderPane.alignment="CENTER">
+      <Label text="perentalassist" styleClass="brand-title"/>
+      <Label text="Welcome back" styleClass="muted"/>
+    </VBox>
+  </top>
+
+  <center>
+    <VBox spacing="14" alignment="CENTER" maxWidth="320">
+      <StackPane prefHeight="140" maxWidth="280" styleClass="illustration">
+        <Label text="(Logo / Illustration here)" styleClass="illustration-text"/>
+      </StackPane>
+
+      <TextField fx:id="emailField" promptText="Email" maxWidth="320"/>
+      <PasswordField fx:id="passwordField" promptText="Password" maxWidth="320"/>
+
+      <HBox spacing="10" alignment="CENTER_RIGHT" maxWidth="320">
+        <Hyperlink text="Forgot password?" onAction="#onForgot"/>
+      </HBox>
+
+      <Button text="Sign in" onAction="#onLogin" maxWidth="320" styleClass="primary-btn"/>
+
+      <HBox spacing="6" alignment="CENTER">
+        <Label text="New here?" />
+        <Hyperlink text="Create an account" onAction="#goSignup"/>
+      </HBox>
+    </VBox>
+  </center>
+
+  <bottom>
+    <Label text="© perentalassist" BorderPane.alignment="CENTER" styleClass="footer-muted" />
+  </bottom>
+</BorderPane>
