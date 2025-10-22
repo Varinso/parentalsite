@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.TeachersController">
+    <top>
+        <VBox fx:id="teachersHeader" spacing="8">
+            <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+            <!-- Back button row (kept at top-left) -->
+            <HBox alignment="TOP_LEFT">
+                <children>
+                    <Button text="← Back" onAction="#goHome"/>
+                </children>
+                <padding><Insets top="8" right="12" bottom="0" left="12"/></padding>
+            </HBox>
+
+            <!-- Centered header bar below the back button -->
+            <HBox styleClass="header-bar" alignment="CENTER">
+                <children>
+                    <Label text="Find a caring tutor for special needs children" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+                </children>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <content>
+                <FlowPane fx:id="teachersGrid" hgap="20" vgap="20" alignment="CENTER">
+                    <padding><Insets top="18" right="24" bottom="18" left="24"/></padding>
+                </FlowPane>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.SessionDetailsController"
+            prefWidth="900" prefHeight="720">
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="← Back" onAction="#goBack"/>
+            <Label text="Session Details" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="14">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+
+            <Label fx:id="titleLbl" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            <Label text="Description:" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="descArea" wrapText="true" editable="false" prefRowCount="3"/>
+
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <Label text="Date:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="dateLbl"/>
+                <Label text="Time:" style="-fx-font-weight: bold;"/>
+                <Label fx:id="timeLbl"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Location:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="locationBox" prefWidth="320"/>
+            </HBox>
+
+            <TitledPane text="Registration Form" expanded="true">
+                <content>
+                    <VBox spacing="12">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+
+                        <GridPane hgap="10" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="25"/>
+                                <ColumnConstraints percentWidth="75"/>
+                            </columnConstraints>
+
+                            <!-- No rowConstraints needed; removing the stray <RowConstraints/> fixes the error -->
+
+                            <Label text="Child Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="childNameField" promptText="Enter child's full name"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Child Age:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="childAgeField" promptText="Years"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Previous Vaccines:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <VBox fx:id="vaxBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Other Vaccine (optional):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="vaxOtherField" promptText="Type vaccine name"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                            <Label text="Previous Disease Records:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <VBox fx:id="disBox" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                            <Label text="Other Disease (optional):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                            <TextField fx:id="disOtherField" promptText="Type disease name"
+                                       GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                        </GridPane>
+
+                        <HBox alignment="CENTER_RIGHT" spacing="8">
+                            <Button text="Register" onAction="#onRegister"/>
+                        </HBox>
+                    </VBox>
+                </content>
+            </TitledPane>
+        </VBox>
+    </center>
+</BorderPane>

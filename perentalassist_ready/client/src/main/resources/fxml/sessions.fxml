@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.net.URL?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.SessionsController" prefWidth="900" prefHeight="720">
+    <top>
+        <VBox spacing="8">
+            <padding>
+                <Insets top="8" right="0" bottom="8" left="0"/>
+            </padding>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Button text="← Home" onAction="#goHome" styleClass="nav-btn"/>
+                <Label text="Health Sessions" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <!-- Compact header: text on left, image flush to right -->
+            <HBox style="-fx-background-color: skyblue; -fx-padding: 12 0 12 0;" fillHeight="true">
+                <!-- Left side with text (narrower, smaller font) -->
+                <VBox alignment="CENTER_LEFT" maxWidth="520">
+                    <padding>
+                        <Insets left="32"/>
+                    </padding>
+                    <Label text="Find the next health session" 
+                           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="for your child" 
+                           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                </VBox>
+
+                <!-- Spacer to push image to the very right edge -->
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- Right side image: slightly taller but limited, ensure no right gap -->
+                <ImageView fitWidth="520" fitHeight="180" preserveRatio="true" pickOnBounds="true">
+                    <image>
+                        <Image url="@../images/health.jpg"/>
+                    </image>
+                    <HBox.margin>
+                        <Insets right="0"/>
+                    </HBox.margin>
+                </ImageView>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true" styleClass="edge-to-edge">
+            <content>
+                <VBox alignment="CENTER">
+                    <TilePane fx:id="grid" alignment="CENTER">
+                        <padding>
+                            <Insets top="16" right="16" bottom="16" left="16"/>
+                        </padding>
+                        <hgap>12</hgap>
+                        <vgap>12</vgap>
+                    </TilePane>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <stylesheets>
+        <URL value="@../css/app.css"/>
+    </stylesheets>
+</BorderPane>

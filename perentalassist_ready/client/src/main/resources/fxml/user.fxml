@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.UserController"
+            prefWidth="960" prefHeight="640">
+
+    <!-- Top bar -->
+    <top>
+        <HBox spacing="8" alignment="CENTER_LEFT" style="-fx-padding:10; -fx-background-color: -fx-base;">
+            <Label text="User Profile" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="backBtn" text="Home" onAction="#goHome"/>
+            <Button fx:id="logoutBtn" text="Logout" onAction="#logout"/>
+        </HBox>
+    </top>
+
+    <!-- Main content -->
+    <center>
+        <ScrollPane fitToWidth="true" pannable="true">
+            <content>
+                <VBox spacing="16" prefWidth="920">
+
+                    <!-- Header block -->
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <ImageView fitWidth="64" fitHeight="64" preserveRatio="true"/>
+                        <VBox spacing="4">
+                            <Label fx:id="nameLbl" text="Name"
+                                   style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                            <Label fx:id="emailLbl" text="email@example.com"/>
+                            <Label fx:id="roleLbl" text="USER"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+
+                    <!-- Appointments -->
+                    <TitledPane text="Doctor Appointments" expanded="true">
+                        <content>
+                            <VBox fx:id="bookingsBox" spacing="6">
+                                <padding><Insets topRightBottomLeft="8"/></padding>
+                                <!-- rows added by controller -->
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                    <!-- Health session registrations -->
+                    <TitledPane text="Health Session Registrations" expanded="true">
+                        <content>
+                            <VBox fx:id="regsBox" spacing="6">
+                                <padding><Insets topRightBottomLeft="8"/></padding>
+                                <!-- rows added by controller -->
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                    <!-- Outcomes -->
+                    <TitledPane text="Outcomes (Vaccines / Tests)" expanded="false">
+                        <content>
+                            <VBox fx:id="outcomesBox" spacing="6">
+                                <padding><Insets topRightBottomLeft="8"/></padding>
+                                <!-- rows added by controller -->
+                            </VBox>
+                        </content>
+                    </TitledPane>
+
+                    <Region prefHeight="10"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <padding>
+        <Insets topRightBottomLeft="12"/>
+    </padding>
+</BorderPane>

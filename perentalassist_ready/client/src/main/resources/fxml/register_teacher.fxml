@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.RegisterTeacherController">
+
+    <top>
+        <HBox spacing="10">
+            <children>
+                <Button text="← Back" onAction="#goBack"/>
+                <Label text="Register as a Teacher" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+            </children>
+            <padding><Insets topRightBottomLeft="12"/></padding>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <content>
+                <VBox spacing="12">
+                    <padding><Insets topRightBottomLeft="16"/></padding>
+
+                    <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="25"/>
+                            <ColumnConstraints percentWidth="75"/>
+                        </columnConstraints>
+
+                        <children>
+                            <Label text="Name (your username):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <!-- Now read-only & auto-filled -->
+                            <TextField fx:id="tfName" editable="false"
+                                       promptText="(auto from your account)"
+                                       style="-fx-opacity: 0.85; -fx-background-color: #f4f4f4;"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Qualification:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="tfQualification" promptText="e.g., BSc in Physics"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Salary Range:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <HBox spacing="8" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                                <children>
+                                    <TextField fx:id="tfSalaryMin" promptText="Min"/>
+                                    <Label text="–"/>
+                                    <TextField fx:id="tfSalaryMax" promptText="Max"/>
+                                </children>
+                            </HBox>
+                        </children>
+                    </GridPane>
+
+                    <Separator/>
+
+                    <Label text="Weekly Availability (select days and times)"/>
+                    <GridPane hgap="10" vgap="6">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="15"/>
+                            <ColumnConstraints percentWidth="20"/>
+                            <ColumnConstraints percentWidth="20"/>
+                        </columnConstraints>
+
+                        <children>
+                            <!-- Mon -->
+                            <CheckBox fx:id="cb1" text="Monday" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s1" promptText="Start (HH:mm)" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e1" promptText="End (HH:mm)"   GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+                            <!-- Tue -->
+                            <CheckBox fx:id="cb2" text="Tuesday" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s2" promptText="Start (HH:mm)" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e2" promptText="End (HH:mm)"   GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+                            <!-- Wed -->
+                            <CheckBox fx:id="cb3" text="Wednesday" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s3" promptText="Start (HH:mm)" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e3" promptText="End (HH:mm)"   GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+                            <!-- Thu -->
+                            <CheckBox fx:id="cb4" text="Thursday" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s4" promptText="Start (HH:mm)" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e4" promptText="End (HH:mm)"   GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+
+                            <!-- Fri -->
+                            <CheckBox fx:id="cb5" text="Friday" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s5" promptText="Start (HH:mm)" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e5" promptText="End (HH:mm)"   GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+
+                            <!-- Sat -->
+                            <CheckBox fx:id="cb6" text="Saturday" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s6" promptText="Start (HH:mm)" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e6" promptText="End (HH:mm)"   GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+                            <!-- Sun -->
+                            <CheckBox fx:id="cb7" text="Sunday" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                            <TextField fx:id="s7" promptText="Start (HH:mm)" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                            <TextField fx:id="e7" promptText="End (HH:mm)"   GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+                        </children>
+                    </GridPane>
+
+                    <HBox spacing="10">
+                        <children>
+                            <Button text="Save" onAction="#onSave"/>
+                            <Button text="Cancel" onAction="#goBack"/>
+                        </children>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
