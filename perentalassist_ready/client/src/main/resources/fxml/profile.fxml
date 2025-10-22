@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.ProfileController" prefWidth="900" prefHeight="800">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Button text="← Home" onAction="#goHome"/>
+                <Label fx:id="nameLbl" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+                <Label fx:id="badgeLbl"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button fx:id="chatBtn" text="Chat" onAction="#onChat"/>
+                <Button fx:id="bookBtn" text="Book with Doctor" onAction="#onBook" visible="false" managed="false"/>
+                <Button fx:id="doctorsBtn" text="Professional Help" onAction="#goDoctors"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox fx:id="postsBox" spacing="12">
+                    <padding>
+                        <Insets top="12" right="12" bottom="12" left="12"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
