@@ -9,7 +9,7 @@
   <top>
     <HBox spacing="10" alignment="CENTER_LEFT" styleClass="navbar">
       <Button text="← Home" onAction="#goBack" styleClass="nav-btn"/>
-      <Label text="Posts & Comments" styleClass="section-title"/>
+      <Label text="Posts amp Comments" styleClass="section-title"/>
     </HBox>
   </top>
 
@@ -19,7 +19,11 @@
         <VBox spacing="10" padding="12">
           <Label text="Create a post"/>
           <TextArea fx:id="newPostArea" promptText="What's on your mind?" prefRowCount="3"/>
-          <Button text="Post" onAction="#onCreatePost" styleClass="primary-btn"/>
+          <TextField fx:id="imageUrlField" promptText="Optional image URL (http...)"/>
+          <HBox spacing="8">
+            <Button text="Post" onAction="#onCreatePost" styleClass="primary-btn"/>
+            <Button text="Post Anonymously" onAction="#onCreatePostAnonymous" styleClass="secondary-btn"/>
+          </HBox>
           <Separator/>
           <TableView fx:id="postTable" prefHeight="600">
             <columns>
