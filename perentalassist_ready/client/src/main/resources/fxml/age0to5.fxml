@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.pa.client.controllers.SimpleGalleryController"
-            prefWidth="1200" prefHeight="800">
+            fx:controller="com.pa.client.controllers.Age0to5Controller"
+            prefWidth="1300" prefHeight="900">
+
     <top>
         <HBox spacing="10" alignment="CENTER_LEFT" styleClass="navbar">
             <Button text="← Back" onAction="#goBack" styleClass="nav-btn"/>
             <Label text="Age 0–5" styleClass="section-title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label text="Learning Resources" styleClass="muted"/>
         </HBox>
     </top>
+
     <center>
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" style="-fx-background-color:transparent;">
             <content>
-                <VBox spacing="16" alignment="TOP_LEFT" padding="12">
-                    <Label text="Videos (add URLs in controller)" styleClass="muted"/>
-                    <FlowPane fx:id="videoGrid" hgap="16" vgap="16" prefWrapLength="1100"/>
+                <VBox spacing="28" alignment="TOP_CENTER">
+
+                    <GridPane styleClass="hero" prefHeight="420">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="48"/>
+                            <ColumnConstraints percentWidth="52"/>
+                        </columnConstraints>
+
+                        <VBox GridPane.columnIndex="0" spacing="10" alignment="CENTER_LEFT" styleClass="hero-left">
+                            <Label text="Early Years (0–5)" styleClass="hero-title"/>
+                            <Label text="Build routines, play often, and spark curiosity from day one."
+                                   wrapText="true" maxWidth="520" styleClass="hero-sub"/>
+                        </VBox>
+
+                        <StackPane GridPane.columnIndex="1" alignment="CENTER_RIGHT" styleClass="hero-right">
+                            <ImageView fx:id="heroImage" preserveRatio="true" fitHeight="420" pickOnBounds="true"/>
+                        </StackPane>
+                    </GridPane>
+
+                    <VBox spacing="8" alignment="CENTER" maxWidth="1100">
+                        <Label text="Videos for Ages 0–5" styleClass="section-title"/>
+                        <Label text="Click a thumbnail to play. Add more links in the controller." styleClass="muted"/>
+                    </VBox>
+
+                    <FlowPane fx:id="videoGrid" hgap="16" vgap="16" prefWrapLength="1100" alignment="CENTER" styleClass="gallery"/>
+                    <Region prefHeight="24"/>
                 </VBox>
             </content>
         </ScrollPane>
