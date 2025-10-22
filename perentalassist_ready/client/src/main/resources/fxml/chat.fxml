@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.ChatController" prefWidth="1000" prefHeight="700">
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="← Home" onAction="#goHome"/>
+            <Label text="Chat" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="searchField" promptText="Search users..."/>
+            <Button text="New chat" onAction="#onSearch"/>
+        </HBox>
+    </top>
+
+    <left>
+        <ListView fx:id="convList" prefWidth="260"/>
+    </left>
+
+    <center>
+        <VBox spacing="0" prefHeight="Infinity" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets top="0" right="0" bottom="0" left="0"/>
+            </padding>
+            <ScrollPane fx:id="messagesScroll" fitToWidth="true" fitToHeight="true" styleClass="chat-scroll" VBox.vgrow="ALWAYS">
+                <content>
+                    <VBox fx:id="messagesBox" spacing="8" prefWidth="680" styleClass="messages-box" VBox.vgrow="ALWAYS"/>
+                </content>
+            </ScrollPane>
+            <HBox spacing="8" style="-fx-padding: 12; -fx-background-color: #f3f3f3;" VBox.vgrow="NEVER">
+                <TextField fx:id="inputField" HBox.hgrow="ALWAYS" promptText="Type a message"/>
+                <Button text="Send" onAction="#onSend"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
