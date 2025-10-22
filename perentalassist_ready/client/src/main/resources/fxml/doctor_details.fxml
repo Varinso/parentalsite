@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.DoctorDetailsController"
+            style="-fx-background-color: linear-gradient(to bottom right, #f6f8fb, #e9f0ff);">
+
+    <!-- App Bar -->
+    <top>
+        <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-padding:12 16; -fx-background-color: transparent;">
+            <children>
+                <Button text="←" onAction="#goBack" style="-fx-font-size:14; -fx-background-radius:8; -fx-background-color: transparent; -fx-padding:8;">
+                    <tooltip>
+                        <Tooltip text="Back"/>
+                    </tooltip>
+                </Button>
+
+                <VBox alignment="CENTER_LEFT" spacing="2">
+                    <children>
+                        <Label text="Doctor Details" style="-fx-font-size:16; -fx-font-weight:bold; -fx-text-fill:#1f2937;"/>
+                        <Label text="Appointment and profile" style="-fx-font-size:11; -fx-text-fill:#667085;"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Main content with a centered card -->
+    <center>
+        <StackPane>
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <children>
+                <VBox spacing="16" alignment="TOP_CENTER" prefWidth="720">
+                    <children>
+
+                        <!-- Doctor card -->
+                        <AnchorPane style="-fx-padding:16; -fx-background-color: white; -fx-background-radius:12; -fx-effect: dropshadow(three-pass-box, rgba(16,24,40,0.08), 18, 0, 0, 6);"
+                                    maxWidth="720">
+                            <children>
+
+                                <HBox spacing="14" alignment="CENTER_LEFT" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="12.0" AnchorPane.rightAnchor="16.0" AnchorPane.bottomAnchor="12.0">
+                                    <children>
+
+                                        <!-- Avatar -->
+                                        <ImageView fx:id="imgAvatar" fitHeight="72" fitWidth="72" pickOnBounds="true" preserveRatio="true"
+                                                   style="-fx-effect: dropshadow(gaussian, rgba(16,24,40,0.12), 10, 0, 0, 4); -fx-background-radius:36;" />
+
+                                        <VBox spacing="4" alignment="CENTER_LEFT">
+                                            <children>
+                                                <!-- Doctor name as a prominent label (kept fx:id for controller) -->
+                                                <Label fx:id="lblName" style="-fx-font-size:18; -fx-font-weight:600; -fx-text-fill:#0f1724;"/>
+                                                <Label fx:id="lblSpec" style="-fx-font-size:12; -fx-text-fill:#475569;"/>
+                                                <HBox spacing="8" alignment="CENTER_LEFT">
+                                                    <children>
+                                                        <Label text="⭐ 4.8" style="-fx-font-size:11; -fx-text-fill:#0f1724;"/>
+                                                        <Label text="•" style="-fx-text-fill:#cbd5e1;"/>
+                                                        <Label text="20 yrs experience" style="-fx-font-size:11; -fx-text-fill:#64748b;"/>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+
+                                        <Region HBox.hgrow="ALWAYS"/>
+
+                                        <VBox alignment="CENTER_RIGHT" spacing="6">
+                                            <children>
+                                                <Button text="Chat" onAction="#onChat" style="-fx-background-color:#eef2ff; -fx-text-fill:#3730a3; -fx-background-radius:10; -fx-padding:6 12;"/>
+                                                <Button text="Book" fx:id="btnBook" onAction="#onBook" style="-fx-background-color:#4f46e5; -fx-text-fill:white; -fx-background-radius:10; -fx-padding:6 12;"/>
+                                            </children>
+                                        </VBox>
+
+                                    </children>
+                                </HBox>
+
+                            </children>
+                        </AnchorPane>
+
+                        <!-- Appointment controls -->
+                        <VBox spacing="12" style="-fx-padding:0 6;">
+                            <children>
+
+                                <HBox spacing="12" alignment="CENTER_LEFT">
+                                    <children>
+                                        <VBox spacing="4">
+                                            <children>
+                                                <Label text="Date" style="-fx-font-size:11; -fx-text-fill:#475569;"/>
+                                                <DatePicker fx:id="datePicker" prefWidth="180" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox spacing="4">
+                                            <children>
+                                                <Label text="Time" style="-fx-font-size:11; -fx-text-fill:#475569;"/>
+                                                <ComboBox fx:id="timeBox" prefWidth="160"/>
+                                            </children>
+                                        </VBox>
+
+                                        <Region HBox.hgrow="ALWAYS"/>
+
+                                        <VBox spacing="4" alignment="CENTER_RIGHT">
+                                            <children>
+                                                <Label text="Mode" style="-fx-font-size:11; -fx-text-fill:#475569;"/>
+                                                <Hyperlink fx:id="videoLink" text="Join video" visible="false" style="-fx-text-fill:#2563eb;"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <Separator/>
+
+                                <Label text="Weekly Schedule" style="-fx-font-weight:600; -fx-text-fill:#0f1724;"/>
+                                <ListView fx:id="listSchedule" prefHeight="140" style="-fx-background-radius:8; -fx-border-radius:8;"/>
+
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </center>
+
+</BorderPane>
