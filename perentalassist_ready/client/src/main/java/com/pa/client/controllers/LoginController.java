@@ -20,7 +20,7 @@ public class LoginController {
         String[] p = first.split("\\|");
         ClientApp.userId = Integer.parseInt(p[1]);
         ClientApp.displayName = p[2];
-        ClientApp.setScene("/fxml/home.fxml", 1300, 900);
+        ClientApp.setScene("/fxml/home.fxml");
       } else {
         alert("Login failed: " + first);
       }
@@ -30,7 +30,7 @@ public class LoginController {
   }
 
   public void goSignup(ActionEvent e) {
-    ClientApp.setScene("/fxml/signup.fxml", 520, 700);
+    ClientApp.setScene("/fxml/signup.fxml");
   }
 
   public void onForgot(ActionEvent e) {
