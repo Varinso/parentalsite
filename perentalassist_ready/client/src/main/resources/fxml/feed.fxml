@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.FeedController" prefWidth="1000" prefHeight="800">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Button text="← Home" onAction="#goHome"/>
+                <Label text="Community Feed" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+            </HBox>
+            <VBox spacing="6" styleClass="feed-composer">
+                <HBox spacing="8">
+                    <TextArea fx:id="newPostArea" styleClass="feed-composer-textarea" promptText="Share something helpful for other parents…" prefRowCount="2" HBox.hgrow="ALWAYS"/>
+                    <VBox spacing="6">
+                        <Button fx:id="attachPostBtn" text="Attach Image" onAction="#onPostAttach" styleClass="secondary-btn" maxWidth="Infinity"/>
+                        <Button text="Post" onAction="#onPostCreate" styleClass="primary-btn" maxWidth="Infinity"/>
+                        <Button text="Post Anonymously" onAction="#onPostCreateAnonymous" styleClass="secondary-btn" maxWidth="Infinity"/>
+                    </VBox>
+                </HBox>
+                <ImageView fx:id="postPreview" fitHeight="80" preserveRatio="true" visible="false"/>
+            </VBox>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="scroll" fitToWidth="true">
+            <content>
+                <VBox fx:id="feedBox" spacing="12">
+                    <padding>
+                        <Insets top="12" right="12" bottom="12" left="12"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
