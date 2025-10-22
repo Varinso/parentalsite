@@ -2,41 +2,57 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.pa.client.controllers.LoginController" prefWidth="440" prefHeight="560"
-            styleClass="auth-root">
+            styleClass="auth-root login-page">
 
-  <top>
-    <VBox spacing="8" alignment="CENTER" BorderPane.alignment="CENTER">
-      <Label text="perentalassist" styleClass="brand-title"/>
-      <Label text="Welcome back" styleClass="muted"/>
-    </VBox>
-  </top>
+    <top>
+        <VBox spacing="12" alignment="CENTER" BorderPane.alignment="CENTER" styleClass="login-header">
+            <padding><Insets top="30" bottom="20"/></padding>
+            <Label text="Parental Assist" styleClass="brand-title" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+            <Label text="Welcome back" styleClass="welcome-text" style="-fx-font-size: 16px; -fx-text-fill: #4b5563;"/>
+        </VBox>
+    </top>
 
-  <center>
-    <VBox spacing="14" alignment="CENTER" maxWidth="320">
-      <StackPane prefHeight="140" maxWidth="280" styleClass="illustration">
-        <Label text="(Logo / Illustration here)" styleClass="illustration-text"/>
-      </StackPane>
+    <center>
+        <VBox spacing="20" alignment="CENTER" maxWidth="320" styleClass="login-form">
+            <padding><Insets left="30" right="30"/></padding>
+            <!-- Logo goes here -->
+            <StackPane prefHeight="100" maxWidth="240" styleClass="login-illustration">
+                <ImageView fx:id="loginLogo" fitHeight="80" preserveRatio="true" smooth="true" pickOnBounds="true">
+                    <image>
+                        <!-- Load from classpath -->
+                        <Image url="@/images/logo.png"/>
+                    </image>
+                </ImageView>
+            </StackPane>
 
-      <TextField fx:id="emailField" promptText="Email" maxWidth="320"/>
-      <PasswordField fx:id="passwordField" promptText="Password" maxWidth="320"/>
+            <VBox spacing="16" styleClass="input-group">
+                <TextField fx:id="emailField" promptText="Email" maxWidth="320" styleClass="login-input"/>
+                <PasswordField fx:id="passwordField" promptText="Password" maxWidth="320" styleClass="login-input"/>
+            </VBox>
 
-      <HBox spacing="10" alignment="CENTER_RIGHT" maxWidth="320">
-        <Hyperlink text="Forgot password?" onAction="#onForgot"/>
-      </HBox>
+            <HBox spacing="10" alignment="CENTER_RIGHT" maxWidth="320">
+                <Hyperlink text="Forgot password?" onAction="#onForgot" style="-fx-text-fill: #4b5563;"/>
+            </HBox>
 
-      <Button text="Sign in" onAction="#onLogin" maxWidth="320" styleClass="primary-btn"/>
+            <Button text="Sign in" onAction="#onLogin" maxWidth="320" styleClass="login-btn" style="-fx-font-size: 15px; -fx-background-color: #2563eb; -fx-text-fill: white; -fx-background-radius: 6;"/>
 
-      <HBox spacing="6" alignment="CENTER">
-        <Label text="New here?" />
-        <Hyperlink text="Create an account" onAction="#goSignup"/>
-      </HBox>
-    </VBox>
-  </center>
+            <HBox spacing="6" alignment="CENTER" styleClass="signup-prompt">
+                <padding><Insets top="10"/></padding>
+                <Label text="New here?" style="-fx-text-fill: #4b5563;"/>
+                <Hyperlink text="Create an account" onAction="#goSignup" style="-fx-text-fill: #2563eb; -fx-underline: false;"/>
+            </HBox>
+        </VBox>
+    </center>
 
-  <bottom>
-    <Label text="© perentalassist" BorderPane.alignment="CENTER" styleClass="footer-muted" />
-  </bottom>
+    <bottom>
+        <VBox alignment="CENTER" spacing="4" styleClass="login-footer">
+            <padding><Insets bottom="20"/></padding>
+            <Label text="© perentalassist" BorderPane.alignment="CENTER" style="-fx-text-fill: #6b7280;" />
+        </VBox>
+    </bottom>
 </BorderPane>
