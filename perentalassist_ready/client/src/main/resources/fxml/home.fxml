@@ -21,16 +21,21 @@
       </HBox>
 
       <HBox alignment="CENTER_LEFT" spacing="18" styleClass="navbar">
-        <StackPane prefWidth="160" prefHeight="48" styleClass="logo-placeholder">
-          <Label text="(Logo here)" styleClass="logo-text"/>
-        </StackPane>
+      <StackPane prefHeight="80" maxWidth="200" styleClass="illustration">
+        <ImageView fx:id="loginLogo" fitHeight="60" preserveRatio="true" smooth="true" pickOnBounds="true">
+                  <image>
+                      <!-- Load from classpath -->
+                      <Image url="@/images/logo.png"/>
+                  </image>
+              </ImageView>
+          </StackPane>
 
         <Button text="Home" styleClass="nav-btn" onAction="#goHome"/>
 
         <MenuButton text="Social Features" styleClass="nav-menu">
           <items>
-            <MenuItem text="Posts &amp; Comments" onAction="#goPosts"/>
-            <MenuItem text="Real-time Chat" onAction="#goChat"/>
+            <MenuItem text="Posts &amp; Comments" onAction="#goFeed"/>
+            <MenuItem text="Chat" onAction="#goChat"/>
           </items>
         </MenuButton>
 
@@ -47,13 +52,13 @@
 
         <MenuButton text="Special Children Support" styleClass="nav-menu">
           <items>
-            <MenuItem text="Search Expert" onAction="#goSCSExpert"/>
-            <MenuItem text="Search Schools" onAction="#goSCSSchools"/>
-            <MenuItem text="Search Private Teachers" onAction="#goSCSTeachers"/>
+            <MenuItem text="Search Schools" onAction="#goSpecialSupport"/>
+            <MenuItem text="Search Private Teachers" onAction="#goTeachers"/>
+              <MenuItem fx:id="menuRegisterTeacher" text="Register as a Teacher" onAction="#goRegisterTeacher"/>
           </items>
         </MenuButton>
 
-        <Button text="Health Sessions" styleClass="nav-btn" onAction="#goHealth"/>
+        <Button text="Health Sessions" styleClass="nav-btn" onAction="#goSessions"/>
         <Pane HBox.hgrow="ALWAYS"/>
       </HBox>
     </VBox>
@@ -76,7 +81,7 @@
                         <!-- Left: text -->
                         <VBox GridPane.columnIndex="0" spacing="10" alignment="CENTER_LEFT" styleClass="hero-left">
                             <Label text="Learning Today For A Better Tomorrow" styleClass="hero-title"/>
-                            <Label text="A long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+                            <Label text="Guidance, community, and resources to help every child thrive."
                                    wrapText="true" maxWidth="520" styleClass="hero-sub"/>
                         </VBox>
 
@@ -103,7 +108,7 @@
                                 <Label text="Social Features" styleClass="feature-title"/>
                                 <Label text="Ask questions, post updates, and connect with other parents in real time."
                                        wrapText="true" styleClass="feature-desc"/>
-                                <HBox spacing="8"><Hyperlink text="Open" onAction="#goPosts"/></HBox>
+                                <HBox spacing="8"><Hyperlink text="Open" onAction="#goFeed"/></HBox>
                             </VBox>
                         </StackPane>
 
@@ -133,7 +138,7 @@
                                 <Label text="Special Children Support" styleClass="feature-title"/>
                                 <Label text="Search experts, schools, or private teachers for special needs."
                                        wrapText="true" styleClass="feature-desc"/>
-                                <HBox spacing="8"><Hyperlink text="Start search" onAction="#goSCSExpert"/></HBox>
+                                <HBox spacing="8"><Hyperlink text="Start search" onAction="#goSpecialSupport"/></HBox>
                             </VBox>
                         </StackPane>
 
@@ -143,7 +148,7 @@
                                 <Label text="Health Sessions" styleClass="feature-title"/>
                                 <Label text="Check upcoming health camps every 6 months and register."
                                        wrapText="true" styleClass="feature-desc"/>
-                                <HBox spacing="8"><Hyperlink text="View camps" onAction="#goHealth"/></HBox>
+                                <HBox spacing="8"><Hyperlink text="View camps" onAction="#goSessions"/></HBox>
                             </VBox>
                         </StackPane>
                     </FlowPane>
