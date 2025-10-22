@@ -8,6 +8,50 @@
 .illustration { -fx-background-color: #f1f5ff; -fx-background-radius: 16; -fx-border-color: #dbe2ff; -fx-border-radius: 16; }
 .illustration-text { -fx-text-fill: #8da1ff; }
 .top-strip { -fx-background-color: #f8fafc; -fx-padding: 8 18; -fx-border-color: #eef2f7; -fx-border-width: 0 0 1 0; }
+
+/* Enhanced login page styles */
+.login-page {
+  -fx-background-color: linear-gradient(to bottom right, #f0f9ff 0%, #ffffff 100%);
+}
+
+.login-header {
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 10, 0, 0, 2);
+}
+
+.login-illustration {
+  -fx-background-color: #f1f5ff;
+  -fx-background-radius: 12;
+  -fx-border-color: #dbe2ff;
+  -fx-border-radius: 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+
+.login-input {
+  -fx-background-color: #f8fafc;
+  -fx-background-radius: 6;
+  -fx-border-color: #e2e8f0;
+  -fx-border-radius: 6;
+  -fx-padding: 12 16;
+  -fx-font-size: 14px;
+}
+
+.login-input:focused {
+  -fx-background-color: white;
+  -fx-border-color: #93c5fd;
+  -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.1), 8, 0, 0, 1);
+}
+
+.login-btn {
+  -fx-padding: 12 20;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.2), 10, 0, 0, 2);
+}
+
+.login-btn:hover {
+  -fx-background-color: #1d4ed8;
+  -fx-cursor: hand;
+}
+
 .top-strip-text { -fx-text-fill: #6b7280; -fx-font-size: 12px; }
 .phone-btn { -fx-background-color: #1f2937; -fx-text-fill: white; -fx-background-radius: 8; -fx-padding: 6 10; }
 .user-btn { -fx-background-color: #ffffff; -fx-border-color: #d1d5db; -fx-text-fill: #111827; -fx-background-radius: 8; -fx-border-radius: 8; }
@@ -45,4 +89,84 @@
 }
 .video-card:hover { -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 18, 0.4, 0, 8); }
 .video-title { -fx-font-weight: 600; -fx-text-fill: #111827; }
+
+/* Chat bubble styles */
+.messages-box { -fx-padding: 12; }
+.chat-scroll { -fx-background: transparent; -fx-background-color: transparent; }
+.msg-bubble-left {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e5e7eb;
+  -fx-border-radius: 12px;
+  -fx-background-radius: 12px;
+  -fx-padding: 8 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0.1, 0, 2);
+  -fx-text-fill: #111827;
+}
+.msg-bubble-right {
+  -fx-background-color: #3b82f6;
+  -fx-text-fill: white;
+  -fx-border-radius: 12px;
+  -fx-background-radius: 12px;
+  -fx-padding: 8 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0.1, 0, 2);
+}
+
+/* Teachers search header */
+.header-bar {
+  -fx-background-color: linear-gradient(to bottom, #cfeffd 0%, #a6e0ff 100%);
+  -fx-padding: 12 18;
+  -fx-alignment: CENTER_LEFT;
+}
+.header-bar > Label {
+  -fx-font-size: 18px;
+  -fx-font-weight: 700;
+  -fx-text-fill: #08304a;
+}
+
+/* Teacher card styles */
+.teacher-card {
+  -fx-background-color: white;
+  -fx-border-color: #e6eef6;
+  -fx-border-radius: 12px;
+  -fx-background-radius: 12px;
+  -fx-padding: 14;
+  -fx-min-width: 260px;
+  -fx-max-width: 320px;
+  -fx-effect: dropshadow(gaussian, rgba(3,9,24,0.06), 12, 0.08, 0, 6);
+}
+.teacher-card Label { -fx-text-fill: #0b1220; }
+.teacher-card .button { -fx-background-color:#3b82f6; -fx-text-fill:white; -fx-background-radius:8; }
+
+
+/* Feed / posts styling */
+.feed-composer {
+  -fx-background-color: white;
+  -fx-background-radius: 12px;
+  -fx-padding: 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0.06, 0, 4);
+}
+.feed-composer-textarea {
+  -fx-background-radius: 8px;
+  -fx-border-radius: 8px;
+  -fx-padding: 8;
+  -fx-font-size: 14px;
+}
+.feed-card {
+  -fx-background-color: white;
+  -fx-background-radius: 12px;
+  -fx-padding: 14;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 14, 0, 0, 3);
+}
+.post-author { -fx-font-weight: 700; -fx-font-size: 14px; }
+.post-badge {
+  -fx-background-color:#e4f0ff; -fx-text-fill:#0b70d5; -fx-padding:2 6; -fx-background-radius:10; -fx-font-size:11px;
+}
+.post-body { -fx-font-size:14px; -fx-text-fill:#111827; }
+.post-image { -fx-background-radius:8px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 2); }
+.post-actions { -fx-padding:8 0 0 0; }
+.comment-bubble { -fx-background-color:#f8f9fb; -fx-background-radius:8; -fx-padding:8; }
+.comment-author { -fx-font-weight:700; -fx-font-size:12px; }
+.secondary-btn { -fx-background-color: transparent; -fx-border-color: #d1d5db; -fx-border-radius: 8; -fx-padding:6 10; }
+
+
 
