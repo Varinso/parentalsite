@@ -42,21 +42,17 @@ public class PreParentController {
 
         // --- Add your videos here (copy/paste more lines anytime) ---
         List<VideoItem> items = new ArrayList<>();
-        items.add(new VideoItem("Getting Ready for Baby: Essential Checklist",
-                "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-        items.add(new VideoItem("Healthy Pregnancy Tips",
-                "https://youtu.be/aqz-KE-bpKQ"));
-        items.add(new VideoItem("Setting Up a Safe Nursery",
-                "https://www.youtube.com/watch?v=ysz5S6PUM-U"));
-        items.add(new VideoItem("Help parents",
+        items.add(new VideoItem("9 Tips for Parenting Pre-Teens",
                 "https://youtu.be/MxBkXCTrh8s?si=VEbsIkfl3zi9YCr3"));
+        items.add(new VideoItem("The Single Most Important Parenting Strategy | Becky Kennedy | TED",
+                "https://youtu.be/PHpPtdk9rco?si=XP0wSL4bv_yGHDtV"));
         // TODO: Add more VideoItem(title, "YouTube URL");
 
         buildGallery(items);
     }
 
     public void goBack(ActionEvent e){
-        ClientApp.setScene("/fxml/home.fxml", 1300, 900);
+        ClientApp.setScene("/fxml/home.fxml");
     }
 
     // ---------- gallery + popup ----------
