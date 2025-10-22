@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.pa.client.controllers.DoctorsController">
+    <top>
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <children>
+                    <Button text="← Back" onAction="#goHome"/>
+                    <Label text="Professional Help" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+                </children>
+                <padding><Insets topRightBottomLeft="12"/></padding>
+            </HBox>
+            <HBox style="-fx-background-color: skyblue; -fx-padding: 15px; -fx-alignment: center">
+                <Label text="Doctors are your child's best friend in maintaining good health!" 
+                       style="-fx-font-size: 24; -fx-font-weight: bold"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <content>
+                <FlowPane fx:id="doctorsGrid" hgap="16" vgap="16" alignment="CENTER" styleClass="doctors-grid">
+                    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+                </FlowPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <stylesheets>
+        <URL value="@../css/app.css"/>
+    </stylesheets>
+</BorderPane>
